@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="160" viewBox="0 0 800 160">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .accent { fill: #1565c0; }
+      .title { font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif; font-size: 34px; font-weight: 700; fill: #e7e7e7; }
+      .subtitle { font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif; font-size: 16px; fill: #90a4ae; }
+    </style>
+  </defs>
+  <rect class="bg" width="800" height="160" rx="12" />
+  <rect class="accent" x="0" y="0" width="10" height="160" rx="4" />
+  <text x="40" y="70" class="title">Asesoría Desarrollo — Codificación</text>
+  <text x="40" y="100" class="subtitle">Bootcamp SENA ADSO · 9 semanas · Cadena de Formación</text>
+  <text x="40" y="126" class="subtitle">Del informe de diseño al 90% del código construido</text>
+</svg>
