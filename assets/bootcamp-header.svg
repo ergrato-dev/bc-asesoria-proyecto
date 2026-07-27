@@ -1,15 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="160" viewBox="0 0 800 160">
-  <defs>
-    <style>
-      .bg { fill: #0d1117; }
-      .accent { fill: #1565c0; }
-      .title { font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif; font-size: 34px; font-weight: 700; fill: #e7e7e7; }
-      .subtitle { font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif; font-size: 16px; fill: #90a4ae; }
-    </style>
-  </defs>
-  <rect class="bg" width="800" height="160" rx="12" />
-  <rect class="accent" x="0" y="0" width="10" height="160" rx="4" />
-  <text x="40" y="70" class="title">Asesoría Desarrollo — Codificación</text>
-  <text x="40" y="100" class="subtitle">Bootcamp SENA ADSO · 9 semanas · Cadena de Formación</text>
-  <text x="40" y="126" class="subtitle">Del informe de diseño al 90% del código construido</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <!-- Fondo -->
+  <rect width="800" height="200" fill="#0d1117"/>
+
+  <!-- Franja izquierda de acento -->
+  <rect x="0" y="0" width="5" height="200" fill="#1565c0"/>
+
+  <!-- Separador vertical central -->
+  <line x1="472" y1="20" x2="472" y2="180" stroke="#21262d" stroke-width="1"/>
+
+  <!-- ══════════ SECCIÓN IZQUIERDA — Identidad ══════════ -->
+
+  <!-- Ícono: terminal -->
+  <rect x="26" y="24" width="42" height="42" rx="6" fill="#161b22" stroke="#1565c0" stroke-width="1.5"/>
+  <path d="M35,38 L44,47 L35,56" fill="none" stroke="#58a6ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="48" y1="56" x2="59" y2="56" stroke="#58a6ff" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Etiqueta BOOTCAMP -->
+  <text x="78" y="34" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="10.5" font-weight="700" letter-spacing="4" fill="#58a6ff">BOOTCAMP SENA · ADSO</text>
+
+  <!-- Título principal -->
+  <text x="26" y="92" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="30" font-weight="800" fill="#e6edf3">Asesoría Desarrollo</text>
+  <text x="26" y="124" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="30" font-weight="800" fill="#e6edf3">Codificación del Proyecto</text>
+
+  <!-- Subrayado de acento -->
+  <rect x="26" y="132" width="230" height="3" rx="1.5" fill="#1565c0"/>
+
+  <!-- Tagline -->
+  <text x="26" y="152" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="12.5" fill="#8b949e">Del informe de diseño al código — entregado en contenedores</text>
+
+  <!-- Badges -->
+  <rect x="26" y="164" width="82" height="22" rx="4" fill="#1c2a3a"/>
+  <text x="67" y="179" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="11" fill="#58a6ff" text-anchor="middle">9 semanas</text>
+
+  <rect x="114" y="164" width="76" height="22" rx="4" fill="#1c2a3a"/>
+  <text x="152" y="179" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="11" fill="#58a6ff" text-anchor="middle">90 horas</text>
+
+  <rect x="196" y="164" width="94" height="22" rx="4" fill="#1c2a3a"/>
+  <text x="243" y="179" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="11" fill="#58a6ff" text-anchor="middle">Cadena Formación</text>
+
+  <rect x="296" y="164" width="150" height="22" rx="4" fill="#1c2a3a"/>
+  <text x="371" y="179" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="11" font-weight="700" fill="#58a6ff" text-anchor="middle">🐳 Gate Docker — sin alternativa</text>
+
+  <!-- ══════════ SECCIÓN DERECHA — Panel docker-compose.yml ══════════ -->
+
+  <rect x="490" y="18" width="284" height="164" rx="6" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Barra de título del panel -->
+  <rect x="490" y="18" width="284" height="26" rx="6" fill="#1565c0"/>
+  <rect x="490" y="32" width="284" height="12" fill="#1565c0"/>
+  <circle cx="504" cy="31" r="3.5" fill="#0d1117" opacity="0.55"/>
+  <circle cx="516" cy="31" r="3.5" fill="#0d1117" opacity="0.55"/>
+  <circle cx="528" cy="31" r="3.5" fill="#0d1117" opacity="0.55"/>
+  <text x="632" y="35" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">docker-compose.yml</text>
+
+  <!-- Filas: servicios que se agregan sprint a sprint -->
+  <text x="506" y="63" font-family="'Courier New',Courier,monospace" font-size="10.5" fill="#484f58">S1</text>
+  <text x="528" y="63" font-family="'Courier New',Courier,monospace" font-size="10.5" fill="#3fb950">✓</text>
+  <text x="546" y="63" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="11.5" fill="#e6edf3">services.db</text>
+
+  <text x="506" y="83" font-family="'Courier New',Courier,monospace" font-size="10.5" fill="#484f58">S2</text>
+  <text x="528" y="83" font-family="'Courier New',Courier,monospace" font-size="10.5" fill="#3fb950">✓</text>
+  <text x="546" y="83" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="11.5" fill="#e6edf3">services.be</text>
+
+  <text x="506" y="103" font-family="'Courier New',Courier,monospace" font-size="10.5" fill="#484f58">S5</text>
+  <text x="528" y="103" font-family="'Courier New',Courier,monospace" font-size="10.5" fill="#3fb950">✓</text>
+  <text x="546" y="103" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="11.5" fill="#e6edf3">services.fe</text>
+
+  <text x="506" y="123" font-family="'Courier New',Courier,monospace" font-size="10.5" fill="#484f58">S7</text>
+  <text x="528" y="123" font-family="'Courier New',Courier,monospace" font-size="10.5" fill="#3fb950">✓</text>
+  <text x="546" y="123" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="11.5" fill="#e6edf3">healthcheck: db → be → fe</text>
+
+  <!-- Fila final destacada: el gate -->
+  <rect x="502" y="140" width="260" height="30" rx="4" fill="#0d2040" stroke="#1565c0" stroke-width="1.2"/>
+  <text x="514" y="160" font-family="'Courier New',Courier,monospace" font-size="10.5" fill="#58a6ff">S9</text>
+  <text x="536" y="160" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="11.5" font-weight="700" fill="#58a6ff">$ docker compose up</text>
+  <text x="700" y="160" font-family="Inter,Roboto,'Open Sans',system-ui,sans-serif" font-size="10.5" font-weight="700" fill="#3fb950" text-anchor="end">GATE</text>
+
+  <!-- Cursor parpadeante simulado -->
+  <rect x="546" y="176" width="6" height="10" rx="1" fill="#1565c0" opacity="0.8"/>
 </svg>
