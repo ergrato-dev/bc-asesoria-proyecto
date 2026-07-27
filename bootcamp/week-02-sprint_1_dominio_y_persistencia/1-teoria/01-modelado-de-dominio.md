@@ -27,6 +27,8 @@ cambia a mitad de sprint, el esquema tiene que seguirlo, nunca al contrario.
 No hace falta implementar Domain-Driven Design táctico completo para un proyecto de bootcamp —
 basta con nombrar bien qué es entidad y qué es value object antes de decidir tablas o colecciones.
 
+![Entidad, Value Object y Agregado — ejemplo genérico con Order, OrderItem, Money, Address y Product](../0-assets/01-entidad-value-object-agregado.svg)
+
 ### 3. De historia de usuario a entidad
 
 Cada historia de usuario del backlog (semana 1) menciona sustantivos del dominio. Ese es el punto

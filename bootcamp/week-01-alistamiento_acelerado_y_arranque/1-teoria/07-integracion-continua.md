@@ -14,6 +14,8 @@ automático es el mínimo "Definition of Done" antes de que un humano revise el 
 
 ### 2. Workflow mínimo
 
+![Pipeline de CI en cada Pull Request](../0-assets/03-pipeline-ci-pull-request.svg)
+
 Backend y frontend, cada uno con su job condicional. Plantilla completa y explicada en
 [`docs/ci-cd-guia.md`](../../../docs/ci-cd-guia.md).
 

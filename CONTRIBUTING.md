@@ -130,6 +130,14 @@ week-XX-tema_principal/
 - ✅ Nomenclatura técnica (código, ramas, commits): **inglés** — ver `docs/estandar-codigo-template.md`
 - ❌ No mezclar idiomas dentro de un mismo párrafo
 
+### Recursos Visuales (SVG)
+
+- ✅ Tema dark, sin degradés, fuentes sans-serif (Inter, Roboto, Open Sans, System UI)
+- ✅ La cantidad de assets por semana depende de cuántos conceptos se benefician de un diagrama — no hay cuota fija, no rellenar por rellenar
+- ✅ Todo SVG debe estar vinculado en al menos un archivo de `1-teoria/` (o `2-practicas/`) donde se explica el concepto que representa
+- ❌ Sin ASCII art como sustituto de diagrama real
+- ❌ Sin asset huérfano (creado pero no enlazado desde ningún `.md`)
+
 ### Contenido de Proceso, No de Dominio
 
 - ✅ El contenido de semanas 2-9 es de **proceso** (cómo correr un sprint, cómo revisar código, cómo hacer un PR) — aplicable a cualquier stack

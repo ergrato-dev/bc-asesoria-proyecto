@@ -30,6 +30,8 @@ arquitectura real.
 No todo hallazgo del review final se corrige en las 4 horas de Trabajo Autónomo. La regla de
 decisión:
 
+![Diagrama de decisión: resolver el hallazgo ahora o documentarlo como deuda técnica](../0-assets/02-decision-resolver-ahora-vs-deuda-tecnica.svg)
+
 | Se resuelve ahora | Se documenta como deuda técnica |
 |---|---|
 | Bloquea el gate Docker o el 90% de avance | No bloquea el gate ni el avance mínimo |

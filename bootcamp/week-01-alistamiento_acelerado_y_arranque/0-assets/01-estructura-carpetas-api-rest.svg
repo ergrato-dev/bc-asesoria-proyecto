@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .box { fill: #161b22; stroke: #30363d; stroke-width: 1.5; }
+      .boxAccent { fill: #161b22; stroke: #1565c0; stroke-width: 2; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .label { font-family: 'Inter','Segoe UI',sans-serif; font-size: 15px; font-weight: 600; fill: #58a6ff; }
+      .item { font-family: 'Inter','Segoe UI',sans-serif; font-size: 13px; fill: #c9d1d9; }
+    </style>
+  </defs>
+  <rect class="bg" width="760" height="420" rx="10"/>
+  <text x="30" y="38" class="title">Estructura de carpetas — estilo API REST</text>
+
+  <!-- root box -->
+  <rect class="boxAccent" x="30" y="60" width="700" height="40" rx="6"/>
+  <text x="46" y="86" class="label">proyecto/</text>
+
+  <!-- backend -->
+  <rect class="boxAccent" x="30" y="120" width="340" height="270" rx="6"/>
+  <text x="46" y="146" class="label">be/app/</text>
+  <rect class="box" x="46" y="160" width="308" height="30" rx="4"/>
+  <text x="58" y="180" class="item">models/ — entidades de dominio</text>
+  <rect class="box" x="46" y="198" width="308" height="30" rx="4"/>
+  <text x="58" y="218" class="item">schemas/ — DTOs entrada/salida</text>
+  <rect class="box" x="46" y="236" width="308" height="30" rx="4"/>
+  <text x="58" y="256" class="item">routers/ — endpoints por dominio</text>
+  <rect class="box" x="46" y="274" width="308" height="30" rx="4"/>
+  <text x="58" y="294" class="item">services/ — lógica de negocio</text>
+  <rect class="box" x="46" y="312" width="308" height="30" rx="4"/>
+  <text x="58" y="332" class="item">utils/ — utilidades transversales</text>
+
+  <!-- frontend -->
+  <rect class="boxAccent" x="390" y="120" width="340" height="270" rx="6"/>
+  <text x="406" y="146" class="label">fe/src/</text>
+  <rect class="box" x="406" y="160" width="308" height="30" rx="4"/>
+  <text x="418" y="180" class="item">api/ — llamadas a la API</text>
+  <rect class="box" x="406" y="198" width="308" height="30" rx="4"/>
+  <text x="418" y="218" class="item">components/ — UI reutilizable</text>
+  <rect class="box" x="406" y="236" width="308" height="30" rx="4"/>
+  <text x="418" y="256" class="item">pages/ — una página por ruta</text>
+  <rect class="box" x="406" y="274" width="308" height="30" rx="4"/>
+  <text x="418" y="294" class="item">hooks/ — lógica reutilizable de estado</text>
+  <rect class="box" x="406" y="312" width="308" height="30" rx="4"/>
+  <text x="418" y="332" class="item">(o equivalente del stack elegido)</text>
+
+  <!-- connectors -->
+  <line x1="200" y1="100" x2="200" y2="120" stroke="#30363d" stroke-width="2"/>
+  <line x1="560" y1="100" x2="560" y2="120" stroke="#30363d" stroke-width="2"/>
+</svg>

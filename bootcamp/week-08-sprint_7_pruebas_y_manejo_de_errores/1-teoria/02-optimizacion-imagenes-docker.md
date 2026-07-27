@@ -44,6 +44,8 @@ CMD ["node", "dist/main.js"]
 Solo la última etapa (`runtime`) pasa a la imagen final. El compilador, las dependencias de
 desarrollo y el código fuente sin transpilar de la etapa `builder` no viajan con ella.
 
+![Multi-stage build: qué se descarta en la etapa builder y qué llega a la imagen final](../0-assets/02-docker-multi-stage-build.svg)
+
 ---
 
 ## `.dockerignore`

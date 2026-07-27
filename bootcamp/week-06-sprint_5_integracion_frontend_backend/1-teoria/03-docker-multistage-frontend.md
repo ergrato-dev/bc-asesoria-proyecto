@@ -22,6 +22,8 @@ de ataque sin aportar nada en runtime. El patrón multi-stage separa:
 - **Etapa de build**: instala dependencias, compila los archivos estáticos
 - **Etapa de runtime**: copia solo el resultado compilado a un servidor estático/Nginx, sin las herramientas de build
 
+![Docker multi-stage del frontend: etapa de build separada de la etapa de runtime](../0-assets/02-docker-multistage-build-runtime.svg)
+
 ### 3. Ejemplo ilustrativo (⚠️ no es código a copiar tal cual)
 
 <!-- ⚠️ ILUSTRATIVO: nombres de comandos genéricos. Adaptar al framework de frontend real

@@ -35,6 +35,8 @@ DATABASE_URL=postgresql://real_user:real_password@localhost:5432/app_db
 AUTH_SECRET_KEY=<valor generado localmente, distinto por entorno>
 ```
 
+![.env vs .env.example y el límite que impone el .gitignore](../0-assets/02-env-vs-env-example-gitignore.svg)
+
 ### 3. Qué hacer si un secreto ya se commiteó por error
 
 No basta con borrarlo en el siguiente commit — sigue en el historial de Git. Rotar el secreto

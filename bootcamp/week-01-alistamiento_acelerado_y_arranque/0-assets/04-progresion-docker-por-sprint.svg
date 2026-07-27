@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" width="780" height="300">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .step { fill: #161b22; stroke: #1565c0; stroke-width: 2; }
+      .stepGate { fill: #161b22; stroke: #58a6ff; stroke-width: 3; }
+      .stepText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 13px; font-weight: 700; fill: #e7e7e7; text-anchor: middle; }
+      .subText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 11px; fill: #8b949e; text-anchor: middle; }
+      .weekText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 11px; fill: #58a6ff; text-anchor: middle; font-weight: 700; }
+      .arrow { stroke: #30363d; stroke-width: 2; marker-end: url(#arrowhead2); }
+    </style>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#30363d"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="780" height="300" rx="10"/>
+  <text x="30" y="34" class="title">Progresión de contenerización — sprint a sprint</text>
+
+  <!-- steps -->
+  <g>
+    <text x="65" y="70" class="weekText">S1</text>
+    <rect class="step" x="20" y="80" width="90" height="70" rx="6"/>
+    <text x="65" y="108" class="stepText">db</text>
+    <text x="65" y="124" class="subText">compose</text>
+    <text x="65" y="138" class="subText">levanta BD</text>
+  </g>
+
+  <line x1="110" y1="115" x2="150" y2="115" class="arrow"/>
+
+  <g>
+    <text x="195" y="70" class="weekText">S2</text>
+    <rect class="step" x="150" y="80" width="90" height="70" rx="6"/>
+    <text x="195" y="108" class="stepText">be</text>
+    <text x="195" y="124" class="subText">conectado</text>
+    <text x="195" y="138" class="subText">a db</text>
+  </g>
+
+  <line x1="240" y1="115" x2="280" y2="115" class="arrow"/>
+
+  <g>
+    <text x="325" y="70" class="weekText">S3-S4</text>
+    <rect class="step" x="280" y="80" width="90" height="70" rx="6"/>
+    <text x="325" y="108" class="stepText">API</text>
+    <text x="325" y="124" class="subText">responde en</text>
+    <text x="325" y="138" class="subText">contenedor</text>
+  </g>
+
+  <line x1="370" y1="115" x2="410" y2="115" class="arrow"/>
+
+  <g>
+    <text x="455" y="70" class="weekText">S5</text>
+    <rect class="step" x="410" y="80" width="90" height="70" rx="6"/>
+    <text x="455" y="108" class="stepText">fe</text>
+    <text x="455" y="124" class="subText">stack completo</text>
+    <text x="455" y="138" class="subText">arriba junto</text>
+  </g>
+
+  <line x1="500" y1="115" x2="540" y2="115" class="arrow"/>
+
+  <g>
+    <text x="585" y="70" class="weekText">S6-S7</text>
+    <rect class="step" x="540" y="80" width="90" height="70" rx="6"/>
+    <text x="585" y="108" class="stepText">healthchecks</text>
+    <text x="585" y="124" class="subText">optimización</text>
+    <text x="585" y="138" class="subText">de imágenes</text>
+  </g>
+
+  <line x1="630" y1="115" x2="670" y2="115" class="arrow"/>
+
+  <g>
+    <text x="722" y="70" class="weekText">S8 · Semana 9</text>
+    <rect class="stepGate" x="670" y="80" width="95" height="70" rx="6"/>
+    <text x="717" y="105" class="stepText">GATE</text>
+    <text x="717" y="121" class="subText">docker compose up</text>
+    <text x="717" y="135" class="subText">sin alternativa</text>
+  </g>
+
+  <text x="30" y="200" class="subText" style="text-anchor:start">Cada sprint agrega al docker-compose.yml exactamente lo que ese sprint construyó — nunca todo de una vez.</text>
+</svg>

@@ -32,6 +32,8 @@ Endpoint/Controlador   →   Servicio                    →   Repositorio/Acces
   code`.
 - **Repositorio**: lee y escribe datos. No decide si una operación está permitida.
 
+![Diagrama de capas Endpoint, Servicio y Repositorio, mostrando dónde vive la validación de entrada y la validación de dominio](../0-assets/01-capas-endpoint-servicio-repositorio.svg)
+
 ### 3. Validación de entrada vs validación de dominio
 
 | | Validación de entrada | Validación de dominio |

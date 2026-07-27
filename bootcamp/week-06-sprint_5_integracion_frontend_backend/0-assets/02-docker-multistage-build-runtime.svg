@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" width="820" height="380">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .frame { fill: none; stroke: #30363d; stroke-width: 2; }
+      .frameRuntime { fill: none; stroke: #58a6ff; stroke-width: 2; }
+      .frameLabel { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12px; font-weight: 700; fill: #58a6ff; }
+      .step { fill: #161b22; stroke: #1565c0; stroke-width: 2; }
+      .stepFail { fill: #161b22; stroke: #8b949e; stroke-width: 2; stroke-dasharray: 5 4; }
+      .stepText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12px; font-weight: 700; fill: #e7e7e7; text-anchor: middle; }
+      .subText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 10px; fill: #8b949e; text-anchor: middle; }
+      .arrow { stroke: #30363d; stroke-width: 2; marker-end: url(#arrowhead4); }
+      .branchLine { stroke: #8b949e; stroke-width: 2; stroke-dasharray: 4 3; fill: none; }
+    </style>
+    <marker id="arrowhead4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#30363d"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="820" height="380" rx="10"/>
+  <text x="30" y="34" class="title">Docker multi-stage del frontend: etapa de build → etapa de runtime</text>
+
+  <!-- stage 1: build -->
+  <rect class="frame" x="20" y="70" width="470" height="130" rx="8"/>
+  <text x="32" y="62" class="frameLabel">Etapa 1 — build</text>
+
+  <rect class="step" x="35" y="105" width="130" height="60" rx="6"/>
+  <text x="100" y="130" class="stepText">node:20-slim</text>
+  <text x="100" y="146" class="subText">imagen con build tools</text>
+
+  <line x1="165" y1="135" x2="192" y2="135" class="arrow"/>
+
+  <rect class="step" x="195" y="105" width="130" height="60" rx="6"/>
+  <text x="260" y="130" class="stepText">npm ci</text>
+  <text x="260" y="146" class="subText">instala dependencias</text>
+
+  <line x1="325" y1="135" x2="352" y2="135" class="arrow"/>
+
+  <rect class="step" x="355" y="105" width="120" height="60" rx="6"/>
+  <text x="415" y="130" class="stepText">npm run build</text>
+  <text x="415" y="146" class="subText">compila a dist/</text>
+
+  <!-- stage 2: runtime -->
+  <rect class="frameRuntime" x="530" y="70" width="270" height="180" rx="8"/>
+  <text x="542" y="62" class="frameLabel">Etapa 2 — runtime (imagen final)</text>
+
+  <rect class="step" x="545" y="105" width="240" height="55" rx="6"/>
+  <text x="665" y="128" class="stepText">nginx:alpine</text>
+  <text x="665" y="144" class="subText">sin herramientas de build</text>
+
+  <rect class="step" x="545" y="175" width="240" height="55" rx="6"/>
+  <text x="665" y="198" class="stepText">COPY --from=build dist/</text>
+  <text x="665" y="214" class="subText">EXPOSE 80</text>
+
+  <line x1="475" y1="135" x2="540" y2="128" class="arrow"/>
+
+  <!-- discarded content -->
+  <path d="M255,200 C255,240 255,255 220,268" class="branchLine"/>
+  <rect class="stepFail" x="35" y="270" width="455" height="60" rx="6"/>
+  <text x="262" y="294" class="stepText" style="fill:#c9d1d9">No pasa a la imagen final</text>
+  <text x="262" y="312" class="subText">node_modules · devDependencies · código fuente sin compilar quedan solo en la etapa de build</text>
+
+  <text x="30" y="360" class="subText" style="text-anchor:start">Menos capas en la imagen que corre en producción = menor tamaño y menor superficie de ataque.</text>
+</svg>

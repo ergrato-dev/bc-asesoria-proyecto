@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 420" width="940" height="420">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .box { fill: #161b22; stroke: #30363d; stroke-width: 1.5; }
+      .boxAccent { fill: #161b22; stroke: #1565c0; stroke-width: 2; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .label { font-family: 'Inter','Segoe UI',sans-serif; font-size: 15px; font-weight: 600; fill: #58a6ff; }
+      .item { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12px; fill: #c9d1d9; }
+      .itemDim { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12px; fill: #8b949e; }
+      .arrow { stroke: #58a6ff; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="940" height="420" rx="10"/>
+  <text x="30" y="38" class="title">Flujo de una petición REST — DTOs vs modelo de dominio</text>
+
+  <!-- Top row: request path -->
+  <rect class="box" x="40" y="70" width="180" height="70" rx="6"/>
+  <text x="54" y="94" class="label">Cliente</text>
+  <text x="54" y="114" class="item">envía la petición</text>
+  <text x="54" y="130" class="itemDim">POST /items {name, price}</text>
+
+  <rect class="boxAccent" x="250" y="70" width="180" height="70" rx="6"/>
+  <text x="264" y="94" class="label">DTO entrada</text>
+  <text x="264" y="114" class="item">valida forma y tipos</text>
+  <text x="264" y="130" class="itemDim">rechaza campos no permitidos</text>
+
+  <rect class="boxAccent" x="460" y="70" width="180" height="70" rx="6"/>
+  <text x="474" y="94" class="label">Lógica interna</text>
+  <text x="474" y="114" class="item">aplica reglas / orquesta</text>
+  <text x="474" y="130" class="itemDim">agrega campos internos (cost...)</text>
+
+  <rect class="boxAccent" x="670" y="70" width="180" height="70" rx="6"/>
+  <text x="684" y="94" class="label">Modelo de dominio</text>
+  <text x="684" y="114" class="item">persiste el registro completo</text>
+  <text x="684" y="130" class="itemDim">id, name, price, cost, timestamps</text>
+
+  <line class="arrow" x1="220" y1="105" x2="248" y2="105"/>
+  <line class="arrow" x1="430" y1="105" x2="458" y2="105"/>
+  <line class="arrow" x1="640" y1="105" x2="668" y2="105"/>
+
+  <!-- Elbow connector: modelo (top) -> DTO salida (bottom) -->
+  <path class="arrow" d="M 760 140 L 760 260 L 550 260 L 550 278"/>
+
+  <!-- Bottom row: response path -->
+  <rect class="boxAccent" x="460" y="280" width="180" height="70" rx="6"/>
+  <text x="474" y="304" class="label">DTO salida</text>
+  <text x="474" y="324" class="item">filtra campos internos</text>
+  <text x="474" y="340" class="itemDim">expone solo lo público</text>
+
+  <rect class="box" x="40" y="280" width="180" height="70" rx="6"/>
+  <text x="54" y="304" class="label">Cliente</text>
+  <text x="54" y="324" class="item">recibe la respuesta</text>
+  <text x="54" y="340" class="itemDim">{id, name, price, created_at}</text>
+
+  <line class="arrow" x1="458" y1="315" x2="222" y2="315"/>
+
+  <text x="40" y="395" class="itemDim">La misma "forma" nunca cruza las tres capas sin filtrarse: cliente ≠ DTO ≠ modelo persistido.</text>
+</svg>

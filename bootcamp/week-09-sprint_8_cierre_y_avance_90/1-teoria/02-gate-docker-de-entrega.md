@@ -25,6 +25,8 @@ proyecto.
 
 ### 2. Cómo verificarlo paso a paso
 
+![Flujo de verificación del gate Docker: clon limpio, copiar .env, docker compose up, verificar cada servicio](../0-assets/01-flujo-verificacion-gate-docker.svg)
+
 ```bash
 # 1. Clonar el repositorio en una carpeta completamente nueva
 #    (o pedirle a un compañero de otro equipo que lo clone)

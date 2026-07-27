@@ -66,6 +66,8 @@ Por qué importa: si el DTO de entrada fuera el modelo completo, cualquier clien
 `cost` o `created_by_user_id` y falsificar datos que no le corresponden. Si el DTO de salida fuera
 el modelo completo, expondrías campos internos sin darte cuenta.
 
+![Flujo de una petición REST: cliente → DTO entrada → lógica interna → modelo de dominio → DTO salida → cliente](../0-assets/01-flujo-peticion-dto-modelo.svg)
+
 ### 4. Paginación
 
 Ningún endpoint de listado devuelve la tabla completa. Patrón mínimo (offset/limit):

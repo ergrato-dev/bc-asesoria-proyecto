@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" width="780" height="380">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .band { fill: #161b22; }
+      .bandUnit { stroke: #1565c0; stroke-width: 2; }
+      .bandInt { stroke: #1565c0; stroke-width: 2; }
+      .bandE2e { stroke: #58a6ff; stroke-width: 3; }
+      .connector { stroke: #30363d; stroke-width: 1; stroke-dasharray: 4,3; fill: none; }
+      .labelTitle { font-family: 'Inter','Segoe UI',sans-serif; font-size: 14px; font-weight: 700; fill: #e7e7e7; }
+      .labelPct { font-family: 'Inter','Segoe UI',sans-serif; font-size: 13px; font-weight: 700; fill: #58a6ff; }
+      .labelDesc { font-family: 'Inter','Segoe UI',sans-serif; font-size: 11px; fill: #8b949e; }
+      .caption { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12px; fill: #8b949e; }
+    </style>
+  </defs>
+  <rect class="bg" width="780" height="380" rx="10"/>
+  <text x="30" y="34" class="title">Pirámide de pruebas — proporción recomendada</text>
+
+  <!-- pyramid: base = unitarias (más pruebas, más rápidas), cúspide = e2e (menos pruebas, más lentas/caras) -->
+  <polygon class="band bandUnit" points="30,320 470,320 343.1,170 156.9,170"/>
+  <polygon class="band bandInt" points="156.9,170 343.1,170 275.4,90 224.6,90"/>
+  <polygon class="band bandE2e" points="224.6,90 275.4,90 250,60"/>
+
+  <!-- connectors -->
+  <line class="connector" x1="406.5" y1="245" x2="510" y2="245"/>
+  <line class="connector" x1="309.2" y1="130" x2="510" y2="130"/>
+  <line class="connector" x1="262.7" y1="75" x2="510" y2="75"/>
+
+  <!-- legend swatches -->
+  <rect x="510" y="238" width="12" height="12" fill="#1565c0"/>
+  <rect x="510" y="123" width="12" height="12" fill="#1565c0"/>
+  <rect x="510" y="68" width="12" height="12" fill="#58a6ff"/>
+
+  <!-- unitarias label -->
+  <text x="530" y="230" class="labelTitle">Unitarias</text>
+  <text x="530" y="248" class="labelPct">~70% de las pruebas</text>
+  <text x="530" y="264" class="labelDesc">función/clase aislada, mockeada, ms</text>
+
+  <!-- integración label -->
+  <text x="530" y="115" class="labelTitle">Integración</text>
+  <text x="530" y="133" class="labelPct">~20% de las pruebas</text>
+  <text x="530" y="149" class="labelDesc">app + BD/API real, valida contratos</text>
+
+  <!-- e2e label -->
+  <text x="530" y="60" class="labelTitle">End-to-end</text>
+  <text x="530" y="78" class="labelPct">~10% de las pruebas</text>
+  <text x="530" y="94" class="labelDesc">flujo completo de usuario, lenta y cara</text>
+
+  <text x="30" y="350" class="caption">La base son pruebas rápidas y baratas de mantener; la cúspide son las más lentas y costosas — pocas, pero críticas.</text>
+</svg>

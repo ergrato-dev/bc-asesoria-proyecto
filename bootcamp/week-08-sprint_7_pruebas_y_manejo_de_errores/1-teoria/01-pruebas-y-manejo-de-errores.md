@@ -13,6 +13,12 @@ Ninguna reemplaza a la otra. Una función de cálculo de precios necesita prueba
 endpoint que la expone y toca la base de datos necesita al menos una prueba de integración que
 confirme que la cadena completa funciona.
 
+![Pirámide de pruebas: proporción recomendada entre unitarias, integración y end-to-end](../0-assets/01-piramide-de-pruebas.svg)
+
+La proporción no es arbitraria: las pruebas unitarias son baratas de escribir y correr, así que
+son la base. Las de integración y end-to-end crecen en costo y lentitud a medida que suben en la
+pirámide — por eso hay muchas menos.
+
 ---
 
 ## Priorizar con Tiempo Limitado

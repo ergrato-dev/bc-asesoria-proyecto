@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .boundary { fill: none; stroke: #8b949e; stroke-width: 1.5; stroke-dasharray: 6 4; }
+      .boundaryLabel { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12px; font-weight: 600; fill: #8b949e; }
+      .entityRoot { fill: #161b22; stroke: #1565c0; stroke-width: 2.5; }
+      .entity { fill: #161b22; stroke: #30363d; stroke-width: 1.5; }
+      .valueObject { fill: #161b22; stroke: #58a6ff; stroke-width: 1.5; stroke-dasharray: 4 3; }
+      .boxTitle { font-family: 'Inter','Segoe UI',sans-serif; font-size: 14px; font-weight: 700; fill: #e7e7e7; text-anchor: middle; }
+      .boxSub { font-family: 'Inter','Segoe UI',sans-serif; font-size: 10.5px; fill: #8b949e; text-anchor: middle; }
+      .containArrow { stroke: #1565c0; stroke-width: 2; fill: none; marker-end: url(#arrowBlue); }
+      .embedArrow { stroke: #58a6ff; stroke-width: 1.5; fill: none; marker-end: url(#arrowLight); }
+      .refArrow { stroke: #8b949e; stroke-width: 1.5; stroke-dasharray: 4 3; fill: none; marker-end: url(#arrowGray); }
+      .legendText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 11.5px; fill: #c9d1d9; }
+    </style>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#1565c0"/>
+    </marker>
+    <marker id="arrowLight" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8b949e"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="760" height="440" rx="10"/>
+  <text x="30" y="36" class="title">Entidad, Value Object y Agregado — ejemplo genérico</text>
+
+  <!-- aggregate boundary -->
+  <rect class="boundary" x="40" y="60" width="380" height="250" rx="10"/>
+  <text x="56" y="82" class="boundaryLabel">Agregado Order — raíz: Order</text>
+
+  <!-- Order (root) -->
+  <rect class="entityRoot" x="64" y="96" width="150" height="56" rx="6"/>
+  <text x="139" y="120" class="boxTitle">Order</text>
+  <text x="139" y="138" class="boxSub">entidad · raíz de agregado</text>
+
+  <!-- Address (value object, embedded in Order) -->
+  <rect class="valueObject" x="250" y="96" width="150" height="56" rx="6"/>
+  <text x="325" y="120" class="boxTitle">Address</text>
+  <text x="325" y="138" class="boxSub">value object (embebido)</text>
+  <line x1="214" y1="124" x2="250" y2="124" class="embedArrow"/>
+
+  <!-- OrderItem (entity within aggregate) -->
+  <rect class="entity" x="64" y="186" width="150" height="56" rx="6"/>
+  <text x="139" y="210" class="boxTitle">OrderItem</text>
+  <text x="139" y="228" class="boxSub">entidad · 1..N por Order</text>
+  <line x1="139" y1="152" x2="139" y2="186" class="containArrow"/>
+
+  <!-- Money (value object, embedded in OrderItem) -->
+  <rect class="valueObject" x="250" y="186" width="150" height="56" rx="6"/>
+  <text x="325" y="210" class="boxTitle">Money</text>
+  <text x="325" y="228" class="boxSub">value object (embebido)</text>
+  <line x1="214" y1="214" x2="250" y2="214" class="embedArrow"/>
+
+  <!-- Product (entity outside the aggregate, referenced by id) -->
+  <rect class="entity" x="470" y="140" width="220" height="70" rx="6"/>
+  <text x="580" y="168" class="boxTitle">Product</text>
+  <text x="580" y="186" class="boxSub">entidad — fuera del agregado</text>
+  <text x="580" y="200" class="boxSub">(compartida por otros agregados)</text>
+
+  <path class="refArrow" d="M139,242 L139,262 L440,262 L440,175 L470,175"/>
+
+  <!-- legend -->
+  <rect class="entityRoot" x="40" y="340" width="26" height="16" rx="3"/>
+  <text x="74" y="353" class="legendText">Raíz de agregado</text>
+
+  <rect class="entity" x="220" y="340" width="26" height="16" rx="3"/>
+  <text x="254" y="353" class="legendText">Entidad</text>
+
+  <rect class="valueObject" x="330" y="340" width="26" height="16" rx="3"/>
+  <text x="364" y="353" class="legendText">Value Object (sin identidad)</text>
+
+  <rect class="boundary" x="40" y="380" width="26" height="16" rx="3"/>
+  <text x="74" y="393" class="legendText">Límite del agregado</text>
+
+  <line x1="260" y1="388" x2="300" y2="388" class="containArrow"/>
+  <text x="310" y="393" class="legendText">contiene / compone</text>
+
+  <line x1="500" y1="388" x2="540" y2="388" class="refArrow"/>
+  <text x="550" y="393" class="legendText">referencia por id</text>
+</svg>

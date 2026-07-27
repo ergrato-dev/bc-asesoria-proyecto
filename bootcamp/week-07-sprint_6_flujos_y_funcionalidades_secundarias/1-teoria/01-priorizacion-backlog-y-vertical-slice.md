@@ -41,6 +41,8 @@ persistencia, lógica de negocio, endpoint, y su consumo en frontend — antes d
 siguiente. El riesgo se reparte: si el tiempo se agota, lo que ya está hecho es demostrable en el
 Sprint Review.
 
+![Vertical slice vs. horizontal: qué queda demostrable](../0-assets/01-vertical-slice-vs-horizontal.svg)
+
 ```
 Horizontal:  [DB: todo] → [API: todo] → [FE: todo]     ← nada usable hasta el final
 Vertical:    [DB+API+FE de la Historia A] → [Historia B] → ...   ← cada slice es demostrable

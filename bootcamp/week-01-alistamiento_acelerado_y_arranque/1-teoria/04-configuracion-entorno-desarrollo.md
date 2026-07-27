@@ -18,6 +18,8 @@ Según el stack elegido en `03-seleccion-herramientas-desarrollo.md`:
 
 ### 2. Estructura de carpetas — estilo API REST
 
+![Estructura de carpetas be/fe estilo API REST](../0-assets/01-estructura-carpetas-api-rest.svg)
+
 Referencia (adaptar nombres de carpetas internas al stack, la separación `be`/`fe` se mantiene):
 
 ```

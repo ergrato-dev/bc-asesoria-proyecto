@@ -36,6 +36,8 @@ Ninguno es "mejor" en abstracto — depende del stack y de si el backend ya sirv
 o renderiza vistas. Decide uno para el proyecto real y documenta por qué en el entregable de esta
 semana.
 
+![Flujo de login, emisión de JWT y peticiones autenticadas con Bearer token](../0-assets/01-flujo-autenticacion-jwt.svg)
+
 ### 3. Hashing de contraseñas
 
 Una contraseña **nunca** se guarda en texto plano ni con un hash reversible o rápido (MD5,

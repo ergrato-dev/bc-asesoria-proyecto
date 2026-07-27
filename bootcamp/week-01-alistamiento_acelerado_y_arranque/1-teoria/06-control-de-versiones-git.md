@@ -15,13 +15,7 @@ por CI, antes de tocar la rama que representa el estado demostrable del proyecto
 
 ### 2. El flujo en una imagen
 
-```
-main      ●─────────────●        (checkpoint fin de cada sprint)
-           \             \
-develop     ●──●──●──●──●──●      (integración continua del equipo)
-                \        \
-feature/x        ●──●──●●
-```
+![Flujo de Git feature → develop → main](../0-assets/02-flujo-git-feature-develop-main.svg)
 
 Detalle completo, comandos y errores comunes en [`docs/git-workflow.md`](../../../docs/git-workflow.md).
 

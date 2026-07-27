@@ -25,6 +25,8 @@ propio) debe exponer, como mínimo:
 | **Error** | Mensaje entendible por el usuario, no el stack trace crudo |
 | **Éxito** | Los datos reales, ya renderizados |
 
+![Flujo de petición Frontend → Backend con los estados de loading, éxito, error y bloqueo por CORS](../0-assets/01-flujo-peticion-frontend-backend.svg)
+
 ### 3. Ejemplo ilustrativo (⚠️ no es código a copiar tal cual)
 
 <!-- ⚠️ ILUSTRATIVO: pseudocódigo tipo JavaScript solo para mostrar el patrón de los 3 estados.

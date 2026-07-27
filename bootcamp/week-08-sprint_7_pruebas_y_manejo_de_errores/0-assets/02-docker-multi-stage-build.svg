@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 360" width="780" height="360">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .stageTag { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12px; font-weight: 700; fill: #58a6ff; text-anchor: middle; }
+      .step { fill: #161b22; stroke: #1565c0; stroke-width: 2; }
+      .stepGate { fill: #161b22; stroke: #58a6ff; stroke-width: 3; }
+      .divider { stroke: #30363d; stroke-width: 1; }
+      .dividerDashed { stroke: #30363d; stroke-width: 1; stroke-dasharray: 4,3; }
+      .item { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12px; fill: #8b949e; }
+      .itemAccent { font-family: 'Inter','Segoe UI',sans-serif; font-size: 13px; font-weight: 700; fill: #58a6ff; }
+      .note { font-family: 'Inter','Segoe UI',sans-serif; font-size: 10px; fill: #8b949e; font-style: italic; }
+      .finalLabel { font-family: 'Inter','Segoe UI',sans-serif; font-size: 13px; font-weight: 700; fill: #58a6ff; text-anchor: middle; }
+      .arrowLabel { font-family: 'Inter','Segoe UI',sans-serif; font-size: 11px; fill: #58a6ff; text-anchor: middle; }
+      .caption { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12px; fill: #8b949e; }
+      .arrow { stroke: #58a6ff; stroke-width: 2; marker-end: url(#arrowheadMs); fill: none; }
+    </style>
+    <marker id="arrowheadMs" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="780" height="360" rx="10"/>
+  <text x="30" y="34" class="title">Multi-stage build — qué llega a la imagen final</text>
+
+  <!-- stage 1: builder -->
+  <text x="190" y="64" class="stageTag">ETAPA 1: BUILDER (intermedia)</text>
+  <rect class="step" x="40" y="74" width="300" height="210" rx="8"/>
+  <line class="divider" x1="55" y1="100" x2="325" y2="100"/>
+  <text x="60" y="122" class="item">- código fuente completo</text>
+  <text x="60" y="146" class="item">- dependencias de desarrollo</text>
+  <text x="60" y="170" class="item">- compilador / build tools</text>
+  <text x="60" y="188" class="note">(quedan en la etapa builder)</text>
+  <line class="dividerDashed" x1="55" y1="202" x2="325" y2="202"/>
+  <text x="60" y="228" class="itemAccent">-&gt; artefacto compilado</text>
+  <text x="60" y="246" class="note">(esto sí se copia a runtime)</text>
+
+  <!-- arrow: copies the compiled artifact into the runtime stage -->
+  <path class="arrow" d="M340,228 C 400,228 400,125 460,125"/>
+  <text x="405" y="170" class="arrowLabel">COPY --from=builder</text>
+
+  <!-- stage 2: runtime (imagen final) -->
+  <text x="600" y="64" class="stageTag">ETAPA 2: RUNTIME → imagen final</text>
+  <rect class="stepGate" x="460" y="74" width="280" height="210" rx="8"/>
+  <line class="divider" x1="475" y1="100" x2="725" y2="100"/>
+  <text x="480" y="125" class="itemAccent">artefacto compilado</text>
+  <text x="480" y="150" class="item">- dependencias de runtime</text>
+  <text x="480" y="176" class="note">sin código fuente sin compilar</text>
+  <text x="480" y="194" class="note">sin compilador ni build tools</text>
+  <text x="600" y="255" class="finalLabel">Imagen final, liviana</text>
+
+  <text x="30" y="330" class="caption">Todo lo que no sea el artefacto final se queda en la etapa builder — Docker la descarta al terminar el build.</text>
+</svg>

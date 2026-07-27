@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" width="780" height="380">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .top { fill: #161b22; stroke: #30363d; stroke-width: 2; }
+      .headerNow { fill: #161b22; stroke: #58a6ff; stroke-width: 3; }
+      .headerLater { fill: #161b22; stroke: #8b949e; stroke-width: 2; stroke-dasharray: 5 4; }
+      .detail { fill: #161b22; stroke: #30363d; stroke-width: 1.5; }
+      .stepText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 14px; font-weight: 700; fill: #e7e7e7; text-anchor: middle; }
+      .criterion { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12px; fill: #c9d1d9; text-anchor: start; }
+      .arrow { stroke: #58a6ff; stroke-width: 2; marker-end: url(#arrowhead); fill: none; }
+      .arrowGray { stroke: #8b949e; stroke-width: 2; marker-end: url(#arrowheadGray); fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrowheadGray" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8b949e"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="780" height="380" rx="10"/>
+  <text x="30" y="34" class="title">Hallazgo del review final: ¿resolver ahora o documentar?</text>
+
+  <rect class="top" x="290" y="60" width="200" height="50" rx="6"/>
+  <text x="390" y="90" class="stepText">Hallazgo del code review</text>
+
+  <path d="M 340,110 C 300,140 240,150 205,168" class="arrow"/>
+  <path d="M 440,110 C 480,140 545,150 580,168" class="arrowGray"/>
+
+  <rect class="headerNow" x="60" y="170" width="280" height="50" rx="6"/>
+  <text x="200" y="200" class="stepText">Se resuelve ahora</text>
+
+  <rect class="headerLater" x="440" y="170" width="280" height="50" rx="6"/>
+  <text x="580" y="200" class="stepText">Se documenta como deuda técnica</text>
+
+  <line x1="200" y1="220" x2="200" y2="233" class="arrow"/>
+  <line x1="580" y1="220" x2="580" y2="233" class="arrowGray"/>
+
+  <rect class="detail" x="60" y="235" width="280" height="125" rx="6"/>
+  <text x="78" y="262" class="criterion">• Bloquea el gate Docker o el 90%</text>
+  <text x="78" y="290" class="criterion">• Es error de seguridad o</text>
+  <text x="90" y="308" class="criterion">pérdida de datos</text>
+  <text x="78" y="336" class="criterion">• Toma menos de 1 hora corregirlo</text>
+
+  <rect class="detail" x="440" y="235" width="280" height="125" rx="6"/>
+  <text x="458" y="262" class="criterion">• No bloquea el gate ni el</text>
+  <text x="470" y="280" class="criterion">avance mínimo</text>
+  <text x="458" y="308" class="criterion">• Mejora de estilo o performance</text>
+  <text x="470" y="326" class="criterion">no crítica</text>
+  <text x="458" y="350" class="criterion">• Requiere refactor mayor o rediseño</text>
+</svg>

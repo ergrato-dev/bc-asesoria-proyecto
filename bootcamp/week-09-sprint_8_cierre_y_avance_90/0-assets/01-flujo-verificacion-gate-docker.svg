@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .step { fill: #161b22; stroke: #1565c0; stroke-width: 2; }
+      .stepGate { fill: #161b22; stroke: #58a6ff; stroke-width: 3; }
+      .stepText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 13px; font-weight: 700; fill: #e7e7e7; text-anchor: middle; }
+      .subText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 11px; fill: #8b949e; text-anchor: middle; }
+      .caption { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12px; fill: #c9d1d9; text-anchor: middle; }
+      .arrow { stroke: #58a6ff; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="800" height="300" rx="10"/>
+  <text x="30" y="34" class="title">Verificación del gate Docker — paso a paso</text>
+
+  <rect class="step" x="30" y="90" width="160" height="70" rx="6"/>
+  <text x="110" y="118" class="stepText">1. Clon limpio</text>
+  <text x="110" y="134" class="subText">carpeta nueva, sin</text>
+  <text x="110" y="147" class="subText">config previa</text>
+
+  <line x1="190" y1="125" x2="222" y2="125" class="arrow"/>
+
+  <rect class="step" x="225" y="90" width="160" height="70" rx="6"/>
+  <text x="305" y="118" class="stepText">2. cp .env.example</text>
+  <text x="305" y="134" class="subText">a .env</text>
+  <text x="305" y="147" class="subText">variables completas</text>
+
+  <line x1="385" y1="125" x2="417" y2="125" class="arrow"/>
+
+  <rect class="stepGate" x="420" y="90" width="170" height="70" rx="6"/>
+  <text x="505" y="115" class="stepText">3. GATE</text>
+  <text x="505" y="132" class="subText">docker compose up</text>
+  <text x="505" y="146" class="subText">sin alternativa</text>
+
+  <line x1="590" y1="125" x2="622" y2="125" class="arrow"/>
+
+  <rect class="step" x="625" y="90" width="150" height="70" rx="6"/>
+  <text x="700" y="118" class="stepText">4. Verificar</text>
+  <text x="700" y="134" class="subText">ps · health</text>
+  <text x="700" y="147" class="subText">curl</text>
+
+  <text x="400" y="196" class="caption">Cada servicio corre en su propio contenedor — nada arranca fuera de Docker:</text>
+
+  <rect class="step" x="230" y="212" width="100" height="55" rx="6"/>
+  <text x="280" y="235" class="stepText">db</text>
+  <text x="280" y="251" class="subText">healthy</text>
+
+  <rect class="step" x="350" y="212" width="100" height="55" rx="6"/>
+  <text x="400" y="235" class="stepText">be</text>
+  <text x="400" y="251" class="subText">healthy</text>
+
+  <rect class="step" x="470" y="212" width="100" height="55" rx="6"/>
+  <text x="520" y="235" class="stepText">fe</text>
+  <text x="520" y="251" class="subText">running</text>
+</svg>

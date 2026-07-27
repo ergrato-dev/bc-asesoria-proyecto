@@ -32,6 +32,8 @@ en silencio. Cada migración debe:
 - Ser pequeña — un cambio conceptual por migración, no todo el esquema del sprint en una sola
 - Aplicarse desde cero en un entorno limpio sin intervención manual
 
+![Cadena de migraciones versionadas aplicada en el mismo orden en local, CI y producción](../0-assets/02-flujo-migraciones-versionadas.svg)
+
 ```python
 # Ejemplo ilustrativo — adapta a tu ORM/stack (Alembic, Prisma Migrate, Django migrations,
 # Flyway, knex, etc. tienen su propia sintaxis; la estructura conceptual es la misma)
@@ -55,6 +57,8 @@ Esta semana el `docker-compose.yml` crece con un servicio `db`, con volumen pers
 los datos sobrevivan a `docker compose down` (sin `-v`). No es gate bloqueante todavía — ver
 [`docs/docker-guia.md`](../../../docs/docker-guia.md) — pero sí evidencia verificable de
 Desempeño: `docker compose up db` debe levantar la base de datos sin errores.
+
+![Servicio db agregado a docker-compose.yml, con volumen persistente y variables desde .env](../0-assets/03-servicio-db-docker-compose.svg)
 
 ```yaml
 # Ejemplo ilustrativo — ajusta imagen, versión y variables a tu motor real (Postgres, MySQL, Mongo...)

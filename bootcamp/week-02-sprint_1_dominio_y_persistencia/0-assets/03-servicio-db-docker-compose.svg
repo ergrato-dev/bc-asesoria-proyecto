@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .box { fill: #161b22; stroke: #30363d; stroke-width: 1.5; }
+      .boxAccent { fill: #161b22; stroke: #1565c0; stroke-width: 2; }
+      .fileLabel { font-family: 'Inter','Segoe UI',sans-serif; font-size: 13px; font-weight: 700; fill: #58a6ff; }
+      .keyLabel { font-family: 'Inter','Segoe UI',sans-serif; font-size: 13px; font-weight: 700; fill: #58a6ff; }
+      .svcTitle { font-family: 'Inter','Segoe UI',sans-serif; font-size: 15px; font-weight: 700; fill: #e7e7e7; }
+      .item { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12px; fill: #c9d1d9; }
+      .badge { fill: #1565c0; }
+      .badgeText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 10px; font-weight: 700; fill: #e7e7e7; text-anchor: middle; }
+      .envItem { font-family: 'Inter','Segoe UI',sans-serif; font-size: 11.5px; fill: #8b949e; text-anchor: middle; }
+      .arrow { stroke: #30363d; stroke-width: 2; marker-end: url(#arrowhead4); }
+    </style>
+    <marker id="arrowhead4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#30363d"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="760" height="340" rx="10"/>
+  <text x="30" y="36" class="title">Servicio db en docker-compose.yml — nuevo en Sprint 1</text>
+
+  <!-- docker-compose.yml file box -->
+  <rect class="boxAccent" x="30" y="60" width="700" height="250" rx="8"/>
+  <text x="46" y="84" class="fileLabel">docker-compose.yml</text>
+  <text x="46" y="106" class="keyLabel">services:</text>
+
+  <!-- existing app service -->
+  <rect class="box" x="60" y="116" width="300" height="130" rx="6"/>
+  <text x="76" y="140" class="svcTitle">app (existe desde semana 1)</text>
+  <text x="76" y="164" class="item">depends_on: db</text>
+  <text x="76" y="186" class="item">env_file: .env</text>
+  <text x="76" y="208" class="item">puerto expuesto al host</text>
+
+  <!-- new db service -->
+  <rect class="boxAccent" x="400" y="116" width="300" height="130" rx="6"/>
+  <rect class="badge" x="648" y="122" width="42" height="18" rx="4"/>
+  <text x="669" y="135" class="badgeText">NUEVO</text>
+  <text x="416" y="140" class="svcTitle">db</text>
+  <text x="416" y="164" class="item">imagen del motor de datos</text>
+  <text x="416" y="186" class="item">volumes: volumen persistente</text>
+  <text x="416" y="208" class="item">variables desde .env</text>
+
+  <line x1="360" y1="182" x2="400" y2="182" class="arrow"/>
+
+  <!-- .env -->
+  <rect class="box" x="60" y="268" width="640" height="36" rx="6"/>
+  <text x="380" y="291" class="envItem">.env / .env.example — credenciales y configuración, nunca hardcodeadas en el yml</text>
+
+  <line x1="210" y1="268" x2="210" y2="248" class="arrow"/>
+  <line x1="550" y1="268" x2="550" y2="248" class="arrow"/>
+</svg>

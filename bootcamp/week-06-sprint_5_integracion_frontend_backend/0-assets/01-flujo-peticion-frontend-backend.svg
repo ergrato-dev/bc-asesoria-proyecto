@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" width="820" height="420">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .step { fill: #161b22; stroke: #1565c0; stroke-width: 2; }
+      .stepGate { fill: #161b22; stroke: #58a6ff; stroke-width: 3; }
+      .stepFail { fill: #161b22; stroke: #8b949e; stroke-width: 2; stroke-dasharray: 5 4; }
+      .stepText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 13px; font-weight: 700; fill: #e7e7e7; text-anchor: middle; }
+      .subText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 11px; fill: #8b949e; text-anchor: middle; }
+      .arrow { stroke: #30363d; stroke-width: 2; marker-end: url(#arrowhead3); }
+      .branchLine { stroke: #8b949e; stroke-width: 2; stroke-dasharray: 4 3; fill: none; }
+      .branchLabel { font-family: 'Inter','Segoe UI',sans-serif; font-size: 10px; fill: #8b949e; text-anchor: middle; }
+    </style>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#30363d"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="820" height="420" rx="10"/>
+  <text x="30" y="34" class="title">Flujo de petición Frontend → Backend: loading, éxito, error y CORS</text>
+
+  <!-- main chain -->
+  <rect class="step" x="20" y="140" width="130" height="70" rx="6"/>
+  <text x="85" y="168" class="stepText">Frontend</text>
+  <text x="85" y="184" class="subText">usuario interactúa</text>
+
+  <line x1="150" y1="175" x2="182" y2="175" class="arrow"/>
+
+  <rect class="step" x="185" y="140" width="130" height="70" rx="6"/>
+  <text x="250" y="168" class="stepText">fetch(API_URL)</text>
+  <text x="250" y="184" class="subText">loading = true</text>
+
+  <line x1="315" y1="175" x2="347" y2="175" class="arrow"/>
+
+  <rect class="stepGate" x="350" y="140" width="140" height="70" rx="6"/>
+  <text x="420" y="168" class="stepText">Backend</text>
+  <text x="420" y="184" class="subText">valida CORS y procesa</text>
+
+  <!-- success branch -->
+  <line x1="490" y1="155" x2="565" y2="98" class="arrow"/>
+  <rect class="step" x="570" y="60" width="220" height="70" rx="6"/>
+  <text x="680" y="86" class="stepText">200 OK</text>
+  <text x="680" y="102" class="subText">setData(respuesta)</text>
+  <text x="680" y="116" class="subText">setLoading(false)</text>
+
+  <!-- error branch -->
+  <line x1="490" y1="195" x2="565" y2="282" class="arrow"/>
+  <rect class="stepFail" x="570" y="250" width="220" height="70" rx="6"/>
+  <text x="680" y="276" class="stepText" style="fill:#c9d1d9">4xx / 5xx</text>
+  <text x="680" y="292" class="subText">setError(mensaje)</text>
+  <text x="680" y="306" class="subText">setLoading(false)</text>
+
+  <!-- CORS branch -->
+  <path d="M410,210 C410,270 380,300 350,336" class="branchLine"/>
+  <text x="480" y="255" class="branchLabel">CORS lo autoriza el backend</text>
+  <rect class="stepFail" x="185" y="340" width="330" height="60" rx="6"/>
+  <text x="350" y="364" class="stepText" style="fill:#c9d1d9">Bloqueado por CORS</text>
+  <text x="350" y="380" class="subText">origen no autorizado → el navegador nunca entrega la respuesta al frontend</text>
+
+  <text x="30" y="405" class="subText" style="text-anchor:start">Loading, error y datos son 3 estados independientes: los tres deben actualizarse en cada llamada.</text>
+</svg>

@@ -48,6 +48,8 @@ services:
 Cada servicio expone (o simula) un endpoint/verificación de salud, y el que depende de él espera
 a `service_healthy`, no a `service_started`.
 
+![Orden de arranque con depends_on y healthcheck](../0-assets/02-orden-arranque-depends-on-healthcheck.svg)
+
 ### 3. Red interna: por qué aislar los servicios
 
 Con varios servicios corriendo juntos, no todos necesitan estar expuestos al host. La base de

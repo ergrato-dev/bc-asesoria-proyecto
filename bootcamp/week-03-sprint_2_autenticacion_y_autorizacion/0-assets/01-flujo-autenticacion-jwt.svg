@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 600" width="760" height="600">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .actorBox { fill: #161b22; stroke: #1565c0; stroke-width: 2; }
+      .actorText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 15px; font-weight: 700; fill: #e7e7e7; text-anchor: middle; }
+      .lifeline { stroke: #30363d; stroke-width: 1.5; stroke-dasharray: 4 4; }
+      .msgArrow { stroke: #58a6ff; stroke-width: 2; marker-end: url(#arrowhead); fill: none; }
+      .msgArrowResp { stroke: #58a6ff; stroke-width: 2; stroke-dasharray: 6 4; marker-end: url(#arrowhead); fill: none; }
+      .msgLabel { font-family: 'Inter','Segoe UI',sans-serif; font-size: 13px; font-weight: 600; fill: #e7e7e7; text-anchor: middle; }
+      .msgSub { font-family: 'Inter','Segoe UI',sans-serif; font-size: 11px; fill: #8b949e; text-anchor: middle; }
+      .noteBox { fill: #161b22; stroke: #30363d; stroke-width: 2; }
+      .noteText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12.5px; font-weight: 600; fill: #e7e7e7; text-anchor: middle; }
+      .noteSub { font-family: 'Inter','Segoe UI',sans-serif; font-size: 10.5px; fill: #8b949e; text-anchor: middle; }
+      .footBox { fill: #161b22; stroke: #1565c0; stroke-width: 2; }
+      .footText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 12.5px; font-weight: 600; fill: #c9d1d9; text-anchor: middle; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="760" height="600" rx="10"/>
+  <text x="30" y="36" class="title">Flujo de autenticación con JWT (token)</text>
+
+  <rect class="actorBox" x="60" y="50" width="160" height="40" rx="6"/>
+  <text x="140" y="75" class="actorText">Cliente</text>
+
+  <rect class="actorBox" x="540" y="50" width="160" height="40" rx="6"/>
+  <text x="620" y="75" class="actorText">Servidor</text>
+
+  <line class="lifeline" x1="140" y1="90" x2="140" y2="560"/>
+  <line class="lifeline" x1="620" y1="90" x2="620" y2="560"/>
+
+  <!-- Paso 1 -->
+  <text x="380" y="105" class="msgLabel">1. POST /login</text>
+  <line class="msgArrow" x1="140" y1="120" x2="615" y2="120"/>
+  <text x="380" y="138" class="msgSub">{ email, password }</text>
+
+  <!-- Paso 2: self-note servidor -->
+  <rect class="noteBox" x="550" y="160" width="140" height="40" rx="6"/>
+  <text x="620" y="176" class="noteText">2. bcrypt.verify()</text>
+  <text x="620" y="192" class="noteSub">compara hash, no texto plano</text>
+
+  <!-- Paso 3: respuesta -->
+  <text x="380" y="225" class="msgLabel">3. 200 OK</text>
+  <line class="msgArrowResp" x1="620" y1="240" x2="145" y2="240"/>
+  <text x="380" y="258" class="msgSub">{ token: JWT firmado, exp }</text>
+
+  <!-- Paso 4: self-note cliente -->
+  <rect class="noteBox" x="70" y="280" width="140" height="40" rx="6"/>
+  <text x="140" y="296" class="noteText">4. Guarda token</text>
+  <text x="140" y="312" class="noteSub">memoria / storage seguro</text>
+
+  <!-- Paso 5 -->
+  <text x="380" y="345" class="msgLabel">5. GET /recurso</text>
+  <line class="msgArrow" x1="140" y1="360" x2="615" y2="360"/>
+  <text x="380" y="378" class="msgSub">Header: Authorization: Bearer &lt;token&gt;</text>
+
+  <!-- Paso 6: self-note servidor -->
+  <rect class="noteBox" x="550" y="400" width="140" height="40" rx="6"/>
+  <text x="620" y="416" class="noteText">6. Verifica firma</text>
+  <text x="620" y="432" class="noteSub">sin consultar BD (stateless)</text>
+
+  <!-- Paso 7 -->
+  <text x="380" y="465" class="msgLabel">7. 200 OK (autorizado)</text>
+  <line class="msgArrowResp" x1="620" y1="480" x2="145" y2="480"/>
+  <text x="380" y="498" class="msgSub">no hubo lookup en base de datos</text>
+
+  <rect class="footBox" x="40" y="520" width="680" height="50" rx="6"/>
+  <text x="380" y="541" class="footText">El JWT es autocontenido: el servidor valida la firma en cada request,</text>
+  <text x="380" y="558" class="footText">no consulta una sesión almacenada</text>
+</svg>

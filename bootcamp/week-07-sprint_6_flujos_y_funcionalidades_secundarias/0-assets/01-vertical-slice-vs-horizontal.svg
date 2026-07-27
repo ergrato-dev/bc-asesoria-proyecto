@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 290" width="900" height="290">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .title { font-family: 'Inter','Segoe UI',sans-serif; font-size: 20px; font-weight: 700; fill: #e7e7e7; }
+      .rowLabel { font-family: 'Inter','Segoe UI',sans-serif; font-size: 13px; font-weight: 700; fill: #58a6ff; }
+      .step { fill: #161b22; stroke: #1565c0; stroke-width: 2; }
+      .stepFail { fill: #161b22; stroke: #8b949e; stroke-width: 2; stroke-dasharray: 5 4; }
+      .stepText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 14px; font-weight: 600; fill: #e7e7e7; text-anchor: middle; }
+      .subText { font-family: 'Inter','Segoe UI',sans-serif; font-size: 11px; fill: #8b949e; text-anchor: middle; }
+      .arrow { stroke: #58a6ff; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="900" height="290" rx="10"/>
+  <text x="30" y="32" class="title">Vertical Slice vs. Horizontal: qué queda demostrable</text>
+
+  <text x="30" y="64" class="rowLabel">Horizontal — evitar en la recta final</text>
+  <rect class="step" x="30" y="78" width="130" height="60" rx="6"/>
+  <text x="95" y="103" class="stepText">DB</text>
+  <text x="95" y="120" class="subText">historias A, B, C</text>
+
+  <line x1="160" y1="108" x2="195" y2="108" class="arrow"/>
+
+  <rect class="step" x="200" y="78" width="130" height="60" rx="6"/>
+  <text x="265" y="103" class="stepText">API</text>
+  <text x="265" y="120" class="subText">historias A, B, C</text>
+
+  <line x1="330" y1="108" x2="365" y2="108" class="arrow"/>
+
+  <rect class="step" x="370" y="78" width="130" height="60" rx="6"/>
+  <text x="435" y="103" class="stepText">FE</text>
+  <text x="435" y="120" class="subText">historias A, B, C</text>
+
+  <line x1="500" y1="108" x2="535" y2="108" class="arrow"/>
+
+  <rect class="stepFail" x="540" y="78" width="330" height="60" rx="6"/>
+  <text x="705" y="103" class="stepText" style="fill:#c9d1d9">Nada demostrable</text>
+  <text x="705" y="120" class="subText">hasta completar las 9 celdas</text>
+
+  <text x="30" y="178" class="rowLabel">Vertical slice — patrón de esta semana</text>
+
+  <rect class="step" x="30" y="192" width="170" height="60" rx="6"/>
+  <text x="115" y="217" class="stepText">Historia A</text>
+  <text x="115" y="234" class="subText">DB + API + FE</text>
+
+  <line x1="200" y1="222" x2="235" y2="222" class="arrow"/>
+
+  <rect class="step" x="240" y="192" width="140" height="60" rx="6"/>
+  <text x="310" y="217" class="stepText">Demostrable</text>
+  <text x="310" y="234" class="subText">Sprint Review</text>
+
+  <line x1="380" y1="222" x2="415" y2="222" class="arrow"/>
+
+  <rect class="step" x="420" y="192" width="170" height="60" rx="6"/>
+  <text x="505" y="217" class="stepText">Historia B</text>
+  <text x="505" y="234" class="subText">DB + API + FE</text>
+
+  <line x1="590" y1="222" x2="625" y2="222" class="arrow"/>
+
+  <rect class="step" x="630" y="192" width="140" height="60" rx="6"/>
+  <text x="700" y="217" class="stepText">Demostrable</text>
+  <text x="700" y="234" class="subText">Sprint Review</text>
+
+  <line x1="770" y1="222" x2="805" y2="222" class="arrow"/>
+
+  <text x="840" y="228" class="stepText">...</text>
+</svg>

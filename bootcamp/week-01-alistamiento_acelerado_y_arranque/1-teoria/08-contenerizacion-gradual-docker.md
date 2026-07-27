@@ -15,6 +15,8 @@ la única herramienta de contenerización aceptada. El entregable del 90% de ava
 
 ### 2. Por qué gradual, no todo de una vez
 
+![Progresión de contenerización sprint a sprint](../0-assets/04-progresion-docker-por-sprint.svg)
+
 Dockerizar el proyecto completo esta semana, antes de tener código, sería trabajo desechable.
 Cada sprint agrega al `docker-compose.yml` exactamente lo que ese sprint construyó — ver la
 progresión completa semana a semana en [`docs/docker-guia.md`](../../../docs/docker-guia.md).
